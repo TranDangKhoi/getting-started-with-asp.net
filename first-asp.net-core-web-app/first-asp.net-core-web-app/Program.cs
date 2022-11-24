@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using first_asp.net_core_web_app.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<first_aspnet_core_web_appContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("first_aspnet_core_web_appContext") ?? throw new InvalidOperationException("Connection string 'first_aspnet_core_web_appContext' not found.")));
 
 var app = builder.Build();
 
