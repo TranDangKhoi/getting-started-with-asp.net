@@ -11,6 +11,11 @@ public class HelloWorldController : Controller
     {
         return View();
     }
+
+    public string NotFound()
+    {
+        return HtmlEncoder.Default.Encode($"Not Found");
+    }
     // With the current pattern : pattern: "{controller=Home}/{action=Index}/{id?}");
     // You can passed in parameters in two ways:
 

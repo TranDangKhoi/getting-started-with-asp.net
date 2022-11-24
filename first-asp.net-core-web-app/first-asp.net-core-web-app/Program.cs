@@ -3,6 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using first_asp.net_core_web_app.Data;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<first_aspnet_core_web_appContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext")));
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<first_aspnet_core_web_appContext>(options =>

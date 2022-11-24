@@ -8,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using first_asp.net_core_web_app.Data;
 using first_asp.net_core_web_app.Models;
 
-namespace first_asp.net_core_web_app.Controller;
+namespace MvcMovie.Controllers;
+
 
 public class MoviesController : Controller
 {
@@ -70,11 +71,12 @@ public class MoviesController : Controller
     // GET: Movies/Edit/5
     public async Task<IActionResult> Edit(int? id)
     {
+        
         if (id == null || _context.Movie == null)
         {
             return NotFound();
         }
-
+        
         var movie = await _context.Movie.FindAsync(id);
         if (movie == null)
         {

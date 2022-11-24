@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\football-app.props" />
+</Project>
