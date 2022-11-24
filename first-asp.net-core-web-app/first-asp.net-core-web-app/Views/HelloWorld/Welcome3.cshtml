@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Welcome3";
+}
+
+<h2>Welcome3</h2>
+
+<ul>
+    @*NumTimes was passed in from HelloWorldController.cs, then you may convert it to integer to make sure it's a number not a string *@
+    @for (int i = 0; i < (int)ViewData["NumTimes"]!; i++)
+    {
+            <li>@ViewData["Message"]</li>
+    }
+</ul>
