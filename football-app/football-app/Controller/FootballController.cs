@@ -9,9 +9,8 @@ public class FootballController : Controller
         return View();
     }
     
-    public IActionResult Matches(int id)
+    public IActionResult Matches()
     {
-        ViewData["id"] = id;
         return View();
     }
 }
