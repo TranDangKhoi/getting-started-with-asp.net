@@ -49,6 +49,15 @@ namespace learn_mvc.Controllers
             }
             return View(categoryFromDb);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Category obj)
+        {
+            _db.Categories.Update(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         public IActionResult GetDetails(int? id)
         {
             if (id == null || id == 0)
@@ -62,5 +71,7 @@ namespace learn_mvc.Controllers
             }
             return View(categoryFromDb);
         }
+
+
     }
 }

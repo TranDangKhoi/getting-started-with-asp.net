@@ -11,13 +11,12 @@
     <div class="col-6">
         <a class="btn btn-primary mt-2 mb-2" asp-controller="Category" asp-action="Create">Create a categories</a>
     </div>
-    <div class="col-6">
-        <span>Modify Categories</span>
-    </div>
+    
 <table class="table table-bordered table-striped" style="width: 100%">
     <thead>
         <th>Category Name</th>
         <th>Display Order</th>
+        <th>Modify</th>
     </thead>
     <tbody>
         @foreach(var obj in Model)
@@ -27,8 +26,6 @@
         <td>@obj.DisplayOrder</td>
         <td>
         <a class="btn btn-primary mt-2 mb-2" asp-controller="Category" asp-action="GetDetails" asp-route-id="@obj.Id">Get Details</a>
-        </td>
-        <td>
         <a class="btn btn-primary mt-2 mb-2" asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
         </td>
         </tr>
