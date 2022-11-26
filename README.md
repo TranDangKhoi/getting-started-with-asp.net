@@ -1,8 +1,6 @@
 - Pipeline: specifies how application shoud respond to a web request. When your application receives a request from the browser, that request goes back and forth through the pipeline
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2741bf96-b3fc-4437-b12b-43fd610979b4/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e8fc880b-1b38-464f-aa24-d105796ed4bb/Untitled.png)
+![Untitled](https://i.ibb.co/vxDSJdh/pipeline.png)
 
 MVC:
 
@@ -14,7 +12,7 @@ MVC:
 - View: Đóng vai trò là User Interface - những thứ mà người dùng nhìn thấy khi mở trang web, thứ mà người dùng vào để tương tác với chương trình của mình (Click vào nút đặt hàng thì sản phẩm sẽ nhảy vào giỏ hàng, click vào thanh toán thì thực hiện chức năng thanh toán). NHƯNG, đương nhiên nếu mà chỉ có Views thì sẽ không thực hiện được các chức năng đó, View còn phải tương tác với Model để thực hiện cập nhật thông tin, logic, … Nhưng view không thể tự mình mà làm việc đó được, nên ta sẽ phải cần nhờ tới con chữ “C” cuối cùng, đó chính là Controller
 - Controller: Đóng vai trò như trái tim của cả chương trình, thực hiện handle các requests của user gửi tới (các request được gửi tới khi người dùng click vào đặt hàng/thanh toán đơn hàng/v.v) và đóng vai trò như là một interface giữa Model và View để thực thi tất cả các business logic.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d5d5ce5b-5ac4-4acf-9682-dfc3575a73a8/Untitled.png)
+![Untitled](https://i.ibb.co/17kByKG/mvc.png)
 
 - \_ViewStartP: chứa liên kết tới main layout
 - Tag Helpers giúp code ở bên server cũng có thể tham gia vào việc tạo và render các HTML elements trong file Razor. Tag helpers là một kiến thức mới trong .NET6 mà trước đây ở các version 4-5 thường dùng là HTML Helpers, viết nhọc hơn rất nhiều
