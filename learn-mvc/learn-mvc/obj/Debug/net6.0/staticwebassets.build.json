@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g/k7JDYweOGZgbrgtVqD+J3dxI1/MKvi7qICRuK7A9s=",
+  "Hash": "z2D2MVRAWoOMOb8gE7SUqYGpLK8vAn8k7Wx4tGCmW7U=",
   "Source": "learn-mvc",
   "BasePath": "_content/learn-mvc",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\HP Victus\\Documents\\GitHub\\Contain All (Github)\\getting-started-with-asp.net\\learn-mvc\\learn-mvc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\learn-mvc.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\HP Victus\\Documents\\GitHub\\Contain All (Github)\\getting-started-with-asp.net\\learn-mvc\\learn-mvc\\wwwroot\\css\\bootswatchTheme.css",
+      "SourceId": "learn-mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP Victus\\Documents\\GitHub\\Contain All (Github)\\getting-started-with-asp.net\\learn-mvc\\learn-mvc\\wwwroot\\",
+      "BasePath": "_content/learn-mvc",
+      "RelativePath": "css/bootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
     },
     {
       "Identity": "C:\\Users\\HP Victus\\Documents\\GitHub\\Contain All (Github)\\getting-started-with-asp.net\\learn-mvc\\learn-mvc\\wwwroot\\css\\site.css",
