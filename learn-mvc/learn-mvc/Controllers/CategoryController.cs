@@ -1,6 +1,8 @@
-﻿using learn_mvc.Data;
+﻿using ContosoUniversity;
+using learn_mvc.Data;
 using learn_mvc.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace learn_mvc.Controllers
 {
@@ -12,10 +14,45 @@ namespace learn_mvc.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
-            IEnumerable<Category> objCategoryList = _db.Categories;
-            return View(objCategoryList);
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+
+            var categories = from s in _db.Categories
+                             select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                categories = categories.Where(s => s.Name.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    categories = categories.OrderByDescending(s => s.Name);
+                    break;
+                case "Date":
+                    categories = categories.OrderBy(s => s.CreateDateTime);
+                    break;
+                case "date_desc":
+                    categories = categories.OrderByDescending(s => s.CreateDateTime);
+                    break;
+                default:
+                    categories = categories.OrderBy(s => s.Name);
+                    break;
+            }
+            int pageSize = 3;
+            return View(await PaginatedList<Category>.CreateAsync(categories.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
         // GET
         public IActionResult Create()
