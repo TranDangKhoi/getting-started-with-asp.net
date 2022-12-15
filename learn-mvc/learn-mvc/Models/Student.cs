@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace learn_mvc.Models
 {
-    public class Employee
+    public class Student
     {
         public int ID { get; set; }
 
