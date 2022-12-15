@@ -25,10 +25,10 @@
 <table class="table table-bordered table-striped" style="width: 100%">
     <thead>
         <th>
-            <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Name</a>
+            <a class="text-decoration-none" asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Name</a>
         </th>
         <th>Display Order</th>
-        <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Created Date</a></th>
+        <th><a class="text-decoration-none" asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Created Date</a></th>
         <th>Modify</th>
     </thead>
     <tbody>
