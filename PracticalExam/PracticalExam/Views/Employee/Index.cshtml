@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Employee List";
+}
+
+<h1>Employee List</h1>
+<table class="table table-bordered table-striped" style="width: 100%">
+    <thead>
+    <th>
+        <a class="text-decoration-none" asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Name</a>
+    </th>
+    <th>Display Order</th>
+    <th><a class="text-decoration-none" asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Created Date</a></th>
+    <th>Modify</th>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.Id</td>
+                <td>@obj.Name</td>
+                <td>@obj.Department</td>
+                <td>@obj.Salary</td>
+                <td>
+                    <a class="btn btn-primary mt-2 mb-2" asp-controller="Employee" asp-action="GetDetails" asp-route-id="@obj.Id">Get Details</a>
+                    <a class="btn btn-primary mt-2 mb-2" asp-controller="Employee" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
+                    <a class="btn btn-danger mt-2 mb-2" asp-controller="Employee" asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
