@@ -4,16 +4,18 @@
 
 <h1>Employee List</h1>
 <div class="col-6">
-    <a class="btn btn-primary mt-2 mb-2" asp-controller="Employee" asp-action="Create">Create a categories</a>
+    <a class="btn btn-primary mt-2 mb-2" asp-controller="Employee" asp-action="Create">Add new employee</a>
 </div>
 <table class="table table-bordered table-striped" style="width: 100%">
     <thead>
     <th>
-        <a class="text-decoration-none" asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Name</a>
+        ID
     </th>
-    <th>Display Order</th>
-    <th><a class="text-decoration-none" asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Created Date</a></th>
-    <th>Modify</th>
+    <th>Name</th>
+    <th>
+        Department
+    </th>
+    <th>Salary</th>
     </thead>
     <tbody>
         @foreach (var obj in Model)
