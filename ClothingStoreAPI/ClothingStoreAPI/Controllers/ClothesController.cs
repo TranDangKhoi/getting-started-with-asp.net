@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ClothingStoreAPI.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClothingStoreAPI.Controllers
@@ -7,11 +8,7 @@ namespace ClothingStoreAPI.Controllers
     [ApiController]
     public class ClothesController : ControllerBase
     {
-        private static readonly List<Clothes> clothes = new List<Clothes>()
-        {
-                new Clothes {Id = 1, Name = "Áo gi lê phối lông cừu nhân tạo", Thumbnail = "https://static.zara.net/photos///2023/V/0/1/p/6318/022/704/2/w/850/6318022704_1_1_1.jpg?ts=1672158879737", Price = 1290000, Description="Áo gi lê cổ ve lật, tay sát nách. Có hai túi may viền ở phía trước. Hai bên may các dây đai kèm khóa cài kim loại để điều chỉnh. Lót lông cừu nhân tạo khác màu bên trong. Cài phía trước bằng khóa kéo.", Remains=10, Status=true},
-                new Clothes {Id = 2, Name = "Áo gi lê phối lông bò nhân tạo", Thumbnail = "https://static.zara.net/photos///2023/V/0/1/p/6318/022/704/2/w/850/6318022704_1_1_1.jpg?ts=1672158879737" , Price = 1290000, Description="Áo gi lê cổ ve lật, tay sát nách. Có hai túi may viền ở phía trước. Hai bên may các dây đai kèm khóa cài kim loại để điều chỉnh. Lót lông bò nhân tạo khác màu bên trong. Cài phía trước bằng khóa kéo.", Remains=12, Status=true}
-        };
+
         private readonly DataContext _context;
 
         public ClothesController(DataContext context)
@@ -24,6 +21,7 @@ namespace ClothingStoreAPI.Controllers
         {
             return Ok(await _context.Clothes.ToListAsync());
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Clothes>> Get(int id)
         {

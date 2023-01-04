@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ClothingStoreAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClothingStoreAPI.Data
 {
@@ -7,5 +8,9 @@ namespace ClothingStoreAPI.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Clothes> Clothes { get; set; }
+
+        public DbSet<Categories> Categories { get; set; }
+
+
     }
 }

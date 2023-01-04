@@ -1,4 +1,4 @@
-﻿namespace ClothingStoreAPI
+﻿namespace ClothingStoreAPI.Models
 {
     public class Clothes
     {
@@ -10,6 +10,10 @@
 
         public int Remains { get; set; }
         public bool Status { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public Categories Category { get; set; }
 
     }
 }

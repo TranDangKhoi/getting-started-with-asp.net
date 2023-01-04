@@ -3,6 +3,7 @@ using ClothingStoreAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClothingStoreAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230104170530_ChangeFK")]
+    partial class ChangeFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +32,6 @@ namespace ClothingStoreAPI.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -76,18 +77,13 @@ namespace ClothingStoreAPI.Migrations
 
             modelBuilder.Entity("ClothingStoreAPI.Models.Clothes", b =>
                 {
-                    b.HasOne("ClothingStoreAPI.Models.Categories", "Category")
-                        .WithMany("Clothes")
+                    b.HasOne("ClothingStoreAPI.Models.Categories", "category")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("ClothingStoreAPI.Models.Categories", b =>
-                {
-                    b.Navigation("Clothes");
+                    b.Navigation("category");
                 });
 #pragma warning restore 612, 618
         }
